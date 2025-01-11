@@ -25,6 +25,10 @@ def load_and_parse_html(url):
     if response.status_code == 200:
         soup = BeautifulSoup(response.content, 'html.parser')
         
+        # important!!!!
+        # Simulate Ctrl+Alt+T to open all toggles in Notion
+        soup.find('body').insert(0, soup.new_tag('script', text='document.dispatchEvent(new KeyboardEvent("keydown", {key: "t", ctrlKey: true, altKey: true}));'))
+        
         # Preserve code blocks and JSON
         for code in soup.find_all(['pre', 'code']):
             code_text = code.get_text(strip=True)
