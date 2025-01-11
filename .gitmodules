@@ -1,3 +1,6 @@
 [submodule "frontend"]
 	path = frontend
 	url = https://github.com/AhmerAftabPatel/Support-Bot
+[submodule "support-bot-frontend-app"]
+	path = support-bot-frontend-app
+	url = https://github.com/AhmerAftabPatel/Support-Bot-Frontend
